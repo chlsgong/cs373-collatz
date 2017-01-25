@@ -41,15 +41,15 @@ class TestCollatz (TestCase) :
 
     def test_eval_1 (self) :
         m = collatz_eval(10)
-        self.assertEqual(m, 10)
+        self.assertEqual(m, 9)
 
     def test_eval_2 (self) :
         m = collatz_eval(15)
-        self.assertEqual(m, 15)
+        self.assertEqual(m, 9)
 
     def test_eval_3 (self) :
         m = collatz_eval(20)
-        self.assertEqual(m, 20)
+        self.assertEqual(m, 19)
 
     # -----
     # print
@@ -68,7 +68,7 @@ class TestCollatz (TestCase) :
         r = StringIO("3\n10\n15\n20\n")
         w = StringIO()
         collatz_solve(r, w)
-        self.assertEqual(w.getvalue(), "10\n15\n20\n")
+        self.assertEqual(w.getvalue(), "9\n9\n19\n")
 
 # ----
 # main
