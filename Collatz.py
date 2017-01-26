@@ -10,6 +10,10 @@
 # Glenn P. Downing
 # ---------------------------
 
+# Cache Declarations
+INT_CACHE = {}      # key: int e, value: int producing the max cycle len from [1, e]
+CYC_CACHE = {}      # key: int i, value: cycle len of i
+
 # ------------
 # collatz_read
 # ------------
@@ -33,29 +37,40 @@ def collatz_eval (n) :
     n the end of the range [1, n], inclusive
     return the max cycle length of the range [1, n]
     """
-    # <your code>
     assert n > 0
+
+    if n in INT_CACHE :
+        return INT_CACHE[n]
 
     maxInt = 0
     maxCycleLength = 0
 
+    # start iterating through range
     for i in range(1, n + 1) :
+        assert i > 0
+
         curInt = i
-        c = 1
+        cnt = 1
         
+        # collatz calculation starts here
         while i > 1 :
+            if i in CYC_CACHE :
+                cnt = CYC_CACHE[i]
+                break
+
             if (i % 2) == 0 :
                 i = (i // 2)
+                cnt += 1
             else :
-                i = (3 * i) + 1
-            c += 1
+                i + (i >> 1) + 1
+                cnt += 2
 
-        # print("curInt", curInt, "c", c)
-        if c >= maxCycleLength :
-            maxCycleLength = c
+        # check if max values need to be changed
+        if cnt >= maxCycleLength :
+            maxCycleLength = cnt
             maxInt = curInt
 
-        assert c > 0
+        assert cnt > 0
 
     assert maxInt > 0
 
