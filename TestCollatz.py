@@ -29,7 +29,7 @@ class TestCollatz (TestCase) :
     # ----
     # read
     # ----
-
+    '''
     def test_read (self) :
         r = StringIO("10\n")
         n = collatz_read(r)
@@ -51,7 +51,7 @@ class TestCollatz (TestCase) :
         n = collatz_read(r)
         self.assertRaises(TypeError)
     """
-
+    '''
     # ----
     # eval
     # ----
@@ -67,7 +67,7 @@ class TestCollatz (TestCase) :
     def test_eval_3 (self) :
         m = collatz_eval(20)
         self.assertEqual(m, 19)
-
+    
     def test_eval_4 (self) :
         m = collatz_eval(1)
         self.assertEqual(m, 1)
@@ -75,7 +75,7 @@ class TestCollatz (TestCase) :
     def test_eval_5 (self) :
         m = collatz_eval(5000000)
         self.assertEqual(m, 3732423)
-
+    '''
     # -----
     # print
     # -----
@@ -112,7 +112,7 @@ class TestCollatz (TestCase) :
         w = StringIO()
         collatz_solve(r, w)
         self.assertEqual(w.getvalue(), "1\n3732423\n")
-
+    '''
 # ----
 # main
 # ----

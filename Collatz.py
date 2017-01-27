@@ -46,31 +46,44 @@ def collatz_eval (n) :
     maxCycleLength = 0
 
     # start iterating through range
-    for i in range(1, n + 1) :
-        assert i > 0
+    curInt = 1
+    while curInt <= n :
+        assert curInt > 0
 
-        curInt = i
-        cnt = 1
-        
-        # collatz calculation starts here
-        while i > 1 :
-            if i in CYC_CACHE :
-                cnt = CYC_CACHE[i]
-                break
+        if curInt in INT_CACHE :            ### Optimize further
+            maxInt = INT_CACHE[curInt]
 
-            if (i % 2) == 0 :
-                i = (i // 2)
-                cnt += 1
-            else :
-                i + (i >> 1) + 1
-                cnt += 2
+        else :
+            i = curInt
+            cnt = 1
+            
+            # collatz calculation starts here
+            while i > 1 :
+                if i in CYC_CACHE :
+                    cnt = cnt + CYC_CACHE[i] - 1
+                    break
 
-        # check if max values need to be changed
-        if cnt >= maxCycleLength :
-            maxCycleLength = cnt
-            maxInt = curInt
+                if (i % 2) == 0 :
+                    i = (i // 2)
+                    cnt += 1
+                else :
+                    i = i + (i >> 1) + 1
+                    cnt += 2
 
-        assert cnt > 0
+            if curInt not in CYC_CACHE :
+                CYC_CACHE[curInt] = cnt
+
+            # check if max values need to be changed
+            if cnt >= maxCycleLength :
+                maxCycleLength = cnt
+                maxInt = curInt
+
+            if curInt not in INT_CACHE :
+                INT_CACHE[curInt] = maxInt
+
+            assert cnt > 0
+            
+        curInt += 1
 
     assert maxInt > 0
 
