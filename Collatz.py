@@ -11,8 +11,8 @@
 # ---------------------------
 
 # Cache Declarations
-INT_CACHE = {}      # key: int e, value: int producing the max cycle len from [1, e]
-CYC_CACHE = {}      # key: int i, value: cycle len of i
+INT_CACHE = {1 : 1}      # key: int e, value: int producing the max cycle len from [1, e]
+CYC_CACHE = {1 : 1}      # key: int i, value: cycle len of i
 
 # ------------
 # collatz_read
@@ -39,22 +39,23 @@ def collatz_eval (n) :
     """
     assert n > 0
 
-    if n in INT_CACHE :
-        return INT_CACHE[n]
-
     maxInt = 0
     maxCycleLength = 0
 
-    # start iterating through range
-    curInt = 1
-    while curInt <= n :
-        assert curInt > 0
+    # check if max key is > than n
+    maxKey = max(INT_CACHE.keys())
+    if n in INT_CACHE and maxKey >= n :
+        maxInt = INT_CACHE[n]
+    else :
+        if maxKey in INT_CACHE :
+            maxInt = INT_CACHE[maxKey]
+            maxCycleLength = CYC_CACHE[maxInt]
 
-        if curInt in INT_CACHE :            ### Optimize further
-            maxInt = INT_CACHE[curInt]
+        # start iterating through range
+        for i in range(maxKey + 1, n + 1) :
+            assert i > 0
 
-        else :
-            i = curInt
+            curInt = i
             cnt = 1
             
             # collatz calculation starts here
@@ -75,16 +76,15 @@ def collatz_eval (n) :
 
             # check if max values need to be changed
             if cnt >= maxCycleLength :
-                maxCycleLength = cnt
                 maxInt = curInt
+                maxCycleLength = cnt
+                # print("maxInt: ", maxInt, "maxCycleLength: ", maxCycleLength)
 
             if curInt not in INT_CACHE :
                 INT_CACHE[curInt] = maxInt
 
             assert cnt > 0
-            
-        curInt += 1
-
+                
     assert maxInt > 0
 
     return maxInt
