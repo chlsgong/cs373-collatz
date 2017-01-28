@@ -44,12 +44,11 @@ def collatz_eval (n) :
 
     # check if max key is > than n
     maxKey = max(INT_CACHE.keys())
-    if n in INT_CACHE and maxKey >= n :
+    if n in INT_CACHE :
         maxInt = INT_CACHE[n]
-    else :
-        if maxKey in INT_CACHE :
-            maxInt = INT_CACHE[maxKey]
-            maxCycleLength = CYC_CACHE[maxInt]
+    else :        
+        maxInt = INT_CACHE[maxKey]
+        maxCycleLength = CYC_CACHE[maxInt]
 
         # start iterating through range
         for i in range(maxKey + 1, n + 1) :
@@ -64,8 +63,8 @@ def collatz_eval (n) :
                     cnt = cnt + CYC_CACHE[i] - 1
                     break
 
-                if (i % 2) == 0 :
-                    i = (i // 2)
+                if i % 2 == 0 :
+                    i = i >> 1
                     cnt += 1
                 else :
                     i = i + (i >> 1) + 1
@@ -73,6 +72,7 @@ def collatz_eval (n) :
 
             if curInt not in CYC_CACHE :
                 CYC_CACHE[curInt] = cnt
+                CYC_CACHE[curInt * 2] = cnt + 1
 
             # check if max values need to be changed
             if cnt >= maxCycleLength :
