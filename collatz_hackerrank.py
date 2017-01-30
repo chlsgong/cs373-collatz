@@ -3,7 +3,6 @@
 # pylint: disable = bad-whitespace
 # pylint: disable = invalid-name
 # pylint: disable = missing-docstring
-# pylint: disable = global-statement
 
 # ---------------------------
 # projects/collatz/Collatz.py
@@ -52,7 +51,7 @@ def collatz_eval (n) :
     if n > 1:
         i = bisect(INT_CACHE, n)
         maxInt = INT_CACHE[i - 1]
-                                
+                
     assert maxInt > 0
 
     return maxInt
@@ -84,3 +83,8 @@ def collatz_solve (r, w) :
         n = collatz_read(r)
         m = collatz_eval(n)
         collatz_print(w, m)
+
+import sys
+
+if __name__ == "__main__" :
+	collatz_solve(sys.stdin, sys.stdout)
