@@ -8,12 +8,10 @@ FILES :=                              \
     RunCollatz.out                    \
     RunCollatz.py                     \
     TestCollatz.out                   \
-    TestCollatz.py
-
-# uncomment these:
-#    .travis.yml                       \
-#    collatz-tests/EID-RunCollatz.in   \
-#    collatz-tests/EID-RunCollatz.out  \
+    TestCollatz.py 					  \
+    #.travis.yml                       \
+    #collatz-tests/hcg359-RunCollatz.in   \
+    #collatz-tests/hcg359-RunCollatz.out  \
 
 ifeq ($(shell uname), Darwin)          # Apple
     PYTHON   := python3.5
