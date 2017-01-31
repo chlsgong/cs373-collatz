@@ -1,0 +1,83 @@
+commit 6bb7a82d359cb9270c70579e725c72b3612b6f1a
+Author: Haoyu Gong <hcgong@cs.utexas.edu>
+Date:   Tue Jan 31 16:39:53 2017 -0600
+
+    formatted code with autopep8 close #5
+
+commit bb0fe95004f2b0b7d76f2e4b184c31c8efb8666d
+Author: Haoyu Gong <hcgong@cs.utexas.edu>
+Date:   Sun Jan 29 22:28:00 2017 -0600
+
+    fixed test output
+
+commit bab1d604b0920e715d8684faa11fff360825c605
+Author: Haoyu Gong <hcgong@cs.utexas.edu>
+Date:   Sun Jan 29 22:00:21 2017 -0600
+
+    finished optimization close #4 close #11 close #13 close #15
+
+commit 6df8589c4a39317b671fb277320ec446d8257473
+Author: Charles <chlsgong@gmail.com>
+Date:   Fri Jan 27 18:11:38 2017 -0600
+
+    adding more optimizations
+
+commit 45361f825e4d87086516e20d2787016e6649b74b
+Author: Haoyu Gong <hcgong@cs.utexas.edu>
+Date:   Thu Jan 26 20:42:39 2017 -0600
+
+    issues with optimization and correctness
+
+commit d51c9c7bf24d53141120c42b5c87b59e84b3c0a4
+Author: Haoyu Gong <hcgong@cs.utexas.edu>
+Date:   Thu Jan 26 18:08:11 2017 -0600
+
+    bug in cache optimization close #14, close #12
+
+commit abc70d3544f64605fd0605eb7d45562ee6948f1d
+Author: Charles <chlsgong@gmail.com>
+Date:   Thu Jan 26 16:41:09 2017 -0600
+
+    started on optimizations on collatz_eval close #12
+
+commit dc73fc83d798f923513980a34a6345a5b203d958
+Author: Charles <chlsgong@gmail.com>
+Date:   Wed Jan 25 20:06:39 2017 -0600
+
+    added unit tests
+
+commit dc8c75b09b521fde6b7f22809cfa7b62ee7c5501
+Author: Charles Gong <chlsgong@gmail.com>
+Date:   Wed Jan 25 15:35:31 2017 -0600
+
+    fixed tests and added simple solution
+
+commit 80b1c1767e64a95e84a0cedfad6f11eeb8710e3d
+Author: Charles Gong <chlsgong@gmail.com>
+Date:   Tue Jan 24 22:11:51 2017 -0600
+
+    corrected travis file
+
+commit bb8a9e5511490aceeaa1557b290444e67466c661
+Author: Charles Gong <chlsgong@gmail.com>
+Date:   Tue Jan 24 22:02:44 2017 -0600
+
+    removed __pycache__
+
+commit ba3180a87f7dda1efe838ac9de4d4427d335d8b9
+Author: Charles Gong <chlsgong@gmail.com>
+Date:   Tue Jan 24 21:59:36 2017 -0600
+
+    added travis ci
+
+commit 7ab8ce61ac98853d572a2793a40720e671b63512
+Author: Charles Gong <chlsgong@gmail.com>
+Date:   Tue Jan 24 21:39:19 2017 -0600
+
+    initial commit close #1, close #2
+
+commit f5f8b4b446cdacb505166a51b2498d66974645e9
+Author: chlsgong <chlsgong@gmail.com>
+Date:   Tue Jan 24 20:40:45 2017 -0600
+
+    Initial commit
