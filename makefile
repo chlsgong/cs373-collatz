@@ -10,8 +10,8 @@ FILES :=                              \
     TestCollatz.out                   \
     TestCollatz.py 					  \
     .travis.yml                       \
-    collatz-tests/hcg359-RunCollatz.in   \
-    collatz-tests/hcg359-RunCollatz.out  \
+    collatz-tests/chlsgong-RunCollatz.in   \
+    collatz-tests/chlsgong-RunCollatz.out  \
 
 ifeq ($(shell uname), Darwin)          # Apple
     PYTHON   := python3.5

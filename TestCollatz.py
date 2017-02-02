@@ -70,7 +70,7 @@ class TestCollatz (TestCase):
         self.assertEqual(m, 3732423)
 
     def test_eval_6(self):
-        self.assertRaises(AssertionError, collatz_eval, 5000001)
+        self.assertRaises(AssertionError, collatz_eval, -1)
 
     # -----
     # print
